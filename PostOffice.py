@@ -4,8 +4,9 @@ from bs4 import BeautifulSoup as soup
 class PostOffice:
     url = "http://www.citypincode.co.in/"
 
-#TODO
-#Check database, see if the pincode is already loaded in the universal database
+    #TODO
+    #Temporarily returning false as default
+    #Check database, see if the pincode is already loaded in the universal database
 
     def pincode_already_captured(self):
         return False
@@ -20,8 +21,9 @@ class PostOffice:
             else:
                 return None
 
-#to be filled in to check the validity of the pincode on the page
-#TODO
+    #to be filled in to check the validity of the pincode on the page
+    #Temorarily returning false as default
+    #TODO
     def is_valid_pincode(self):
         return False
 

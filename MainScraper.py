@@ -1,6 +1,6 @@
-from PostOffice import PostOffice
-from postal_code_india import PostalCodeIndia
-from pin_net import PinNet
+from WebScrapers.post_office import PostOffice
+from WebScrapers.postal_code_india import PostalCodeIndia
+from WebScrapers.pin_net import PinNet
 # import pandas as pd
 
 office = PostOffice("http://www.citypincode.co.in/")
@@ -89,7 +89,7 @@ for i in state_list:
 #   f.write(pin+'\n')
 # f.close()
 
-#creating the checked_pincode csv file:
+# creating the checked_pincode csv file:
 # filename = "checked_pincodes.csv"
 # f = open(filename, "w")
 # f.close()

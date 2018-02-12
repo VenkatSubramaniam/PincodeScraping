@@ -1,5 +1,6 @@
-from urllib.request import urlopen as op
+# from urllib.request import urlopen as op
 from bs4 import BeautifulSoup as soup
+import subprocess
 
 
 class SiteScraper:
@@ -17,14 +18,11 @@ class SiteScraper:
 # TODO
 # Temporarily returning true as default
 # Check database, see if the pincode is already loaded in the universal database
-def pincode_already_captured():
-    return False
 
 
 # Loads the html
 def get_site_html(url):
-    if not pincode_already_captured():
-        page_html = op(url).read()
-        return page_html
-    else:
-        return None
+    # page_html = op(url).read()
+    #feels like REALLLY bad design :'(
+    page_html = subprocess.check_output(['curl', url])
+    return page_html

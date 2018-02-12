@@ -27,10 +27,4 @@ class PostOffice(SiteScraper):
         for table in full_table:
             #feels gimmicky but if the table has "post office" at the beginning, it follows a particular format.
             if table.getText().split("\n")[1].split(":")[0]=='Post Office':
-                return table.getText().split("\n")[4].split(":")[1].strip()
-
-
-
-office = PostOffice("http://www.citypincode.co.in/")
-print(office.get_district("560000"))
-
+                return table.getText().split("\n")[4].split(":")[1].strip().lower()

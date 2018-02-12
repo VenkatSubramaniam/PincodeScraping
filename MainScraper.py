@@ -1,9 +1,11 @@
 from PostOffice import PostOffice
 from postal_code_india import PostalCodeIndia
+from pin_net import PinNet
 # import pandas as pd
 
 office = PostOffice("http://www.citypincode.co.in/")
 postal = PostalCodeIndia("https://www.postalcodeindia.com/")
+net = PinNet("https://pincode.net.in/")
 
 state_list = ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "30", "31", "32", "33", "34", "36", "37", "38", "39", "40", "41",
      "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "56", "57", "58", "59", "60", "61", "63", "64", "67", "68", "69", "70", "71", "72", "73", "74", "75",
@@ -56,7 +58,10 @@ for i in state_list:
             if district==None:
                 #second check at postalcodeindia.com
                 district = postal.get_district(pincode)
-                if
+                if district==None:
+                    district = net.get_district(pincode)
+
+
             if district!=None:
                 pin_map[pincode] = district
                 newly_captured+=1
@@ -68,8 +73,6 @@ for i in state_list:
         else:
             already_captured+=1
             print("already_captured =", already_captured)
-
-# old_pin_codes = pd.read_csv("pin_codes.csv")
 
 
 # creating the csv file:

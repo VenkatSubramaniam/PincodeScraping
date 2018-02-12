@@ -1,35 +1,36 @@
-from urllib.request import urlopen as op
-from bs4 import BeautifulSoup as soup
-
-class PostOffice:
-    url = "http://www.citypincode.co.in/"
-
-    #TODO
-    #Temporarily returning false as default
-    #Check database, see if the pincode is already loaded in the universal database
-
-    def pincode_already_captured(self):
-        return False
+from SiteScraper import SiteScraper
 
 
-    #Loads the html
-    def get_site_html(pincode, self):
-            if not self.pincode_already_captured:
-                myURL = PostOffice.url+pincode
-                page_html = op(myURL).read()
-                return page_html
-            else:
-                return None
+class PostOffice(SiteScraper):
 
-    #to be filled in to check the validity of the pincode on the page
-    #Temorarily returning false as default
-    #TODO
-    def is_valid_pincode(self):
-        return False
+    def __init__(self, url):
+        super().__init__(url)
+
+
+    # To be filled in to check the validity of the pincode on the page
+    # Temporarily returning false as default
+    # unnecessary?
+    # def is_valid_pincode(pincode):
+    #     return True
+
+    def get_soup(self, pincode):
+        my_url = self.url+pincode +"/"
+        return SiteScraper.get_site_soup(my_url)
 
 #Gets the name of the district once given a valid post office URL whose
 #pincode has not yet been captured.
-    def getDistrict(self):
-        if self.is_valid_pincode():
+    def get_district(self, pincode):
+        my_soup = self.get_soup(pincode)
+        full_table = my_soup.findAll("table", {"class": "table"})
+        if len(full_table)==1:
+            return None
+        for table in full_table:
+            #feels gimmicky but if the table has "post office" at the beginning, it follows a particular format.
+            if table.getText().split("\n")[1].split(":")[0]=='Post Office':
+                return table.getText().split("\n")[4].split(":")[1].strip()
 
+
+
+office = PostOffice("http://www.citypincode.co.in/")
+print(office.get_district("560000"))
 

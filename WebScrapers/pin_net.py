@@ -1,4 +1,4 @@
-from SiteScraper import SiteScraper
+from WebScrapers.SiteScraper import SiteScraper
 
 
 class PinNet(SiteScraper):

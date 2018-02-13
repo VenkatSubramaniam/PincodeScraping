@@ -1,25 +1,22 @@
 from WebScrapers.post_office import PostOffice
 from WebScrapers.postal_code_india import PostalCodeIndia
 from WebScrapers.pin_net import PinNet
+import atexit
 # import pandas as pd
 
 office = PostOffice("http://www.citypincode.co.in/")
 postal = PostalCodeIndia("https://www.postalcodeindia.com/")
 net = PinNet("https://pincode.net.in/")
 
-state_list = ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "30", "31", "32", "33", "34", "36", "37", "38", "39", "40", "41",
-     "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "56", "57", "58", "59", "60", "61", "63", "64", "67", "68", "69", "70", "71", "72", "73", "74", "75",
-     "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "92"]
+state_list = ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "30", "31", "32", "33", "34", "36", "37", "38", "39", "40", "41","42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "56", "57", "58", "59", "60", "61", "63", "64", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "92"]
 
 
 pin_map = dict()
-x=0
-f = open("pin_codes.csv", "r")
+f = open("data/pin_codes.csv", "r")
 for line in f:
     list = line.split(",")
-    pin_map[list[0]] =list[1]
+    pin_map[list[0]] =list[1].lower()
 f.close()
-print("number in shubh =", len(pin_map))
 
 
 #
@@ -37,60 +34,55 @@ print("number in shubh =", len(pin_map))
 # print("if true, ^ : ", len(pin_map)==len(old_set.union(pin_map.keys()
 #
 
+last_checked = int(open("data/last_checked").readline())
+
+f = open("data/my_pin_codes.csv", "a")
+f_closed = False
+false_pins = open("data/false_pincodes.csv", "a")
+false_pins_closed = False
 
 
-does_not_exist=0
-already_captured=0
-newly_captured=0
+@atexit.register
+def exit_handler():
+    open("data/last_checked", "w").write(str(last_checked))
+    print("Program stopped at pin code:", last_checked)
+    f.close()
+    false_pins.close()
 
 
-false_pincodes = []
-# checked_pincodes = []
-for i in state_list:
-    for j in range(10000):
-        pincode = str(j)
-        while len(pincode)<4:
-            pincode = '0' + pincode
-        pincode = i + pincode
-        if pincode not in pin_map:
-            #first check at citypincode.co.in
-            district = office.get_district(pincode)
-            if district==None:
-                #second check at postalcodeindia.com
-                district = postal.get_district(pincode)
-                if district==None:
-                    district = net.get_district(pincode)
+try:
+    for i in state_list:
+        for j in range(last_checked, 10000):
+            last_checked += 1
+            pin_code = str(j)
+            while len(pin_code)<4:
+                pin_code = '0' + pin_code
+            pin_code = i + pin_code
+            print("Currently checking:", pin_code)
+            if pin_code not in pin_map:
+                # first check at citypincode.co.in
+                district = office.get_district(pin_code)
+                if district is None:
+                    # second check at postalcodeindia.com
+                    # This site is probably the best but there are too many issues because it's protected by cloudflare
+                    district = postal.get_district(pin_code)
 
+                    if district is None:
+                        # third check at pincode.in.net
+                        district = net.get_district(pin_code)
+                # checked everywhere, if district has now been set, then write it to the file.
+                if district is not None:
+                    # Making the (not so bold) assumption here that not many new pin codes (if at all)
+                    # are going to be found, and therefore we will be easily able to fill in the state in the csv.
+                    f.write(pin_code + "," + district + "\n")
+                else:
+                    false_pins.write(pin_code + "\n")
 
-            if district!=None:
-                pin_map[pincode] = district
-                newly_captured+=1
-                print("newly_captured =", newly_captured)
-            else: #needs to be moved down as more stuff is let in
-                does_not_exist+=1
-                false_pincodes.append(pincode)
-                print("does_not_exist =", does_not_exist)
-        else:
-            already_captured+=1
-            print("already_captured =", already_captured)
+#I know this is bad style but I'm preparing for any possible eventuality
+except:
+    exit_handler()
 
-
-# creating the csv file:
-# filename = "my_pin_codes.csv"
-# f = open(filename, "w")
-# for pin in pin_map:
-#     f.write(pin+"," +pin_map[pin]+"\n")
-# f.close()
-
-# creating the false_pincode csv file:
-# filename = "false_pincodes.csv"
-# f = open(filename, "w")
-# for pin in false_pincodes:
-#   f.write(pin+'\n')
-# f.close()
-
-# creating the checked_pincode csv file:
-# filename = "checked_pincodes.csv"
-# f = open(filename, "w")
-# f.close()
-
+if not f_closed:
+    f.close()
+if not false_pins_closed:
+    false_pins.close()

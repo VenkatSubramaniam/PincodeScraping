@@ -1,4 +1,4 @@
-from SiteScraper import SiteScraper
+from WebScrapers.SiteScraper import SiteScraper
 
 
 class PostOffice(SiteScraper):
@@ -13,6 +13,8 @@ class PostOffice(SiteScraper):
     # def is_valid_pincode(pincode):
     #     return True
 
+    # duplicated? needs refactoring
+    # TODO
     def get_soup(self, pincode):
         my_url = self.url+pincode +"/"
         return SiteScraper.get_site_soup(my_url)

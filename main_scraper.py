@@ -3,7 +3,6 @@ from web_scrapers.postal_code_india import PostalCodeIndia
 from web_scrapers.pin_net import PinNet
 import atexit
 from random import randint
-# import pandas as pd
 
 office = PostOffice()
 postal = PostalCodeIndia()
@@ -18,20 +17,6 @@ net = PinNet()
 #     pin_map[list[0]] =list[1].lower()
 # f.close()
 #
-# #
-# # The following commented code is entirely unnecessary as it has been executed and it has been found that everything in the official record of
-# # pincodes has already been captured in our dataset. It has been left here as a PoC.
-# #
-# # old_pins = pd.read_csv("official_india_pin_codes.csv") #received from https://data.gov.in/catalog/all-india-pincode-directory
-# #
-# # old_set = set()
-# # for y in x["pincode"]:
-# #     old_set.add(str(y))
-# # print("number in official=", len(arr))
-# #
-# # print("if len(pin_map)==len(old_set.union(pin_map.keys(), then everything in old_set is already captured in pin_map.")
-# # print("if true, ^ : ", len(pin_map)==len(old_set.union(pin_map.keys()
-# #
 #
 # last_checked = int(open("data/last_checked").readlines())
 #

@@ -1,4 +1,4 @@
-from web_scrapers.SiteScraper import SiteScraper
+from web_scrapers.site_scraper import SiteScraper
 
 
 class PostOffice(SiteScraper):

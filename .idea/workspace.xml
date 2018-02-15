@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7d7c7aa-4b1b-4396-bf60-5b8ba3e806a9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/file_makers/data/false_pincodes.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/file_makers/data/last_checked" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/MainScraper.py" afterPath="$PROJECT_DIR$/main_scraper.py" />
-      <change beforePath="$PROJECT_DIR$/WebScrapers/SiteScraper.py" afterPath="$PROJECT_DIR$/web_scrapers/SiteScraper.py" />
-      <change beforePath="$PROJECT_DIR$/WebScrapers/__init__.py" afterPath="$PROJECT_DIR$/web_scrapers/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/WebScrapers/pin_net.py" afterPath="$PROJECT_DIR$/web_scrapers/pin_net.py" />
-      <change beforePath="$PROJECT_DIR$/WebScrapers/post_office.py" afterPath="$PROJECT_DIR$/web_scrapers/post_office.py" />
-      <change beforePath="$PROJECT_DIR$/WebScrapers/postal_code_india.py" afterPath="$PROJECT_DIR$/web_scrapers/postal_code_india.py" />
-      <change beforePath="$PROJECT_DIR$/data/checked_pincodes.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/false_pincodes.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/last_checked" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/my_pin_codes.csv" afterPath="$PROJECT_DIR$/file_makers/data/my_pin_codes.csv" />
-      <change beforePath="$PROJECT_DIR$/data/official_india_pin_codes.csv" afterPath="$PROJECT_DIR$/file_makers/data/official_india_pin_codes.csv" />
-      <change beforePath="$PROJECT_DIR$/data/pin_codes.csv" afterPath="$PROJECT_DIR$/file_makers/data/pin_codes.csv" />
+      <change beforePath="$PROJECT_DIR$/main_scraper.py" afterPath="$PROJECT_DIR$/main_scraper.py" />
+      <change beforePath="$PROJECT_DIR$/web_scrapers/SiteScraper.py" afterPath="$PROJECT_DIR$/web_scrapers/SiteScraper.py" />
+      <change beforePath="$PROJECT_DIR$/web_scrapers/pin_net.py" afterPath="$PROJECT_DIR$/web_scrapers/pin_net.py" />
+      <change beforePath="$PROJECT_DIR$/web_scrapers/post_office.py" afterPath="$PROJECT_DIR$/web_scrapers/post_office.py" />
+      <change beforePath="$PROJECT_DIR$/web_scrapers/postal_code_india.py" afterPath="$PROJECT_DIR$/web_scrapers/postal_code_india.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,6 +17,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="post_office.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web_scrapers/post_office.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="66" lean-forward="true" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pin_net.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web_scrapers/pin_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="file_maker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file_makers/file_maker.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -47,21 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="file_reader.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/file_makers/file_reader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="postal_code_india.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_scrapers/postal_code_india.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="300">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -70,8 +70,8 @@
       <file leaf-file-name="SiteScraper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_scrapers/SiteScraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="193">
+              <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
               <folding>
                 <element signature="e#43#80#0" expanded="true" />
               </folding>
@@ -82,8 +82,8 @@
       <file leaf-file-name="main_scraper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="9" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="135">
+              <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -96,26 +96,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="my_pin_codes.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file_makers/data/my_pin_codes.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="false_pincodes.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file_makers/data/false_pincodes.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -165,6 +145,11 @@
         <option value="$PROJECT_DIR$/FileMakers/state_map.py" />
         <option value="$PROJECT_DIR$/file_makers/file_maker.py" />
         <option value="$PROJECT_DIR$/file_makers/file_reader.py" />
+        <option value="$PROJECT_DIR$/web_scrapers/SiteScraper.py" />
+        <option value="$PROJECT_DIR$/web_scrapers/post_office.py" />
+        <option value="$PROJECT_DIR$/web_scrapers/postal_code_india.py" />
+        <option value="$PROJECT_DIR$/main_scraper.py" />
+        <option value="$PROJECT_DIR$/web_scrapers/pin_net.py" />
       </list>
     </option>
   </component>
@@ -569,14 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web_scrapers/post_office.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/checked_pincodes.csv" />
     <entry file="file://$PROJECT_DIR$/file_makers/data/false_pincodes.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -602,42 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web_scrapers/pin_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web_scrapers/SiteScraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#43#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web_scrapers/postal_code_india.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="9" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file_makers/data/pin_codes.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -646,11 +587,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file_makers/data/state_pin_map.csv">
+    <entry file="file://$PROJECT_DIR$/web_scrapers/SiteScraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="193">
+          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="e#43#80#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,6 +609,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_scrapers/postal_code_india.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_scrapers/post_office.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="66" lean-forward="true" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file_makers/data/state_pin_map.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_scrapers/pin_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding />
         </state>
       </provider>

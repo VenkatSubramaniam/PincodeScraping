@@ -5,8 +5,9 @@ import subprocess
 
 class SiteScraper:
 
-    def __init__(self, url):
-        self.url = url
+    def __init__(self):
+        pass
+
 
     @staticmethod
     def get_site_soup(url):

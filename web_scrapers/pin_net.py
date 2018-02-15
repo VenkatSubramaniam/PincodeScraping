@@ -3,8 +3,9 @@ from web_scrapers.SiteScraper import SiteScraper
 
 class PinNet(SiteScraper):
 
-    def __init__(self, url):
-        super().__init__(url)
+    def __init__(self):
+        super().__init__()
+        self.url = "https://pincode.net.in/"
 
     def get_soup(self, pincode):
         my_url = self.url+pincode +"/"

@@ -3,7 +3,8 @@ from web_scrapers.SiteScraper import SiteScraper
 class PostalCodeIndia(SiteScraper):
 
     def __init__(self, url):
-        super().__init__(url)
+        super().__init__()
+        self.url = "https://www.postalcodeindia.com/"
 
     def get_soup(self, pincode):
         my_url = self.url+pincode +"/"

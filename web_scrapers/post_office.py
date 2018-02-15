@@ -3,8 +3,9 @@ from web_scrapers.SiteScraper import SiteScraper
 
 class PostOffice(SiteScraper):
 
-    def __init__(self, url):
-        super().__init__(url)
+    def __init__(self):
+        super().__init__()
+        self.url = "http://www.citypincode.co.in/"
 
 
     # To be filled in to check the validity of the pincode on the page

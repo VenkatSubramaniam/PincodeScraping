@@ -15,14 +15,10 @@ class SiteScraper:
         return page_soup
 
 
-# TODO
-# Temporarily returning true as default
-# Check database, see if the pincode is already loaded in the universal database
-
-
 # Loads the html
 def get_site_html(url):
     # page_html = op(url).read()
-    #feels like REALLLY bad design :'(
+    # feels like REALLLY bad design :'(
+    # using it because internet security is hard to hack through, and curl gets me the html without any issues.
     page_html = subprocess.check_output(['curl', url])
     return page_html

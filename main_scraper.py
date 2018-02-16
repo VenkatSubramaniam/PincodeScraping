@@ -24,7 +24,7 @@ def find_new_pins(prefix):
     print(type(int(my_min_max[1])))
     try:
         try:
-            last_checked = int(open("file_manager/data/last_checked_"+prefix).readline())
+            last_checked = int(open("errors/error_record_"+prefix).readline())
         except FileNotFoundError:
             last_checked = int(my_min_max[0])
         for i in range(last_checked, int(my_min_max[1])+50):

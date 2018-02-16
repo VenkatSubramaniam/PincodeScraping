@@ -3,7 +3,7 @@ from web_scrapers.postal_code_india import PostalCodeIndia
 from web_scrapers.pin_net import PinNet
 import file_manager.file_reader as fr
 import file_manager.file_maker as fm
-
+import os
 from multiprocessing import Pool as pl
 import atexit
 
@@ -11,6 +11,7 @@ office = PostOffice()
 postal = PostalCodeIndia()
 net = PinNet()
 state_to_pin_map = fr.get_state_to_pin_map()
+
 max_min_map = fr.get_max_min_for_state()
 
 # state_list = ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "30", "31", "32", "33", "34", "36", "37", "38", "39", "40", "41","42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "56", "57", "58", "59", "60", "61", "63", "64", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "92"]
@@ -90,13 +91,13 @@ def find_new_pins(prefix):
     my_min_max = max_min_map[prefix]
     pin_list = fr.get_pin_list(prefix, state_to_pin_map)
     suffix = "000"
-    print(my_min_max[1])
+    print(type(int(my_min_max[1])))
     try:
         try:
             last_checked = int(open("file_manager/data/last_checked_"+prefix).readline())
         except FileNotFoundError:
-            last_checked = my_min_max[0]
-        for i in range(last_checked, int(my_min_max[1].strip())+50):
+            last_checked = int(my_min_max[0])
+        for i in range(last_checked, int(my_min_max[1])+50):
             suffix = str(i)
             if len(suffix)>3:
                 break
@@ -123,9 +124,11 @@ def find_new_pins(prefix):
     except:
         exit_handler(prefix, suffix)
 
+def f(n):
+    print("hey")
 
 if __name__ == '__main__':
-    # with pl(len(state_to_pin_map)) as p:
-    #     p.map(find_new_pins, state_to_pin_map.keys())
-    for prefix in state_to_pin_map.keys():
-        find_new_pins(prefix)
+    with pl(processes=50) as p:
+        p.map(find_new_pins,state_to_pin_map.keys())
+    # for prefix in state_to_pin_map.keys():
+    #     find_new_pins(prefix)

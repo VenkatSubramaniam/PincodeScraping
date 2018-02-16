@@ -2,7 +2,7 @@ from web_scrapers.site_scraper import SiteScraper
 
 class PostalCodeIndia(SiteScraper):
 
-    def __init__(self, url):
+    def __init__(self):
         super().__init__()
         self.url = "https://www.postalcodeindia.com/"
 

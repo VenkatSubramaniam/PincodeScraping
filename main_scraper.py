@@ -26,7 +26,7 @@ def find_new_pins(prefix):
             last_checked = int(open("errors/error_record_"+prefix+".csv").readline())
         except FileNotFoundError:
             last_checked = int(my_min_max[0])
-        print("last checked = ", last_checked)
+        # print("last checked = ", last_checked)
         if last_checked == 1000:
             return
         for i in range(last_checked, int(my_min_max[1])+50):

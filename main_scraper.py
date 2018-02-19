@@ -61,3 +61,4 @@ def find_new_pins(prefix):
 if __name__ == '__main__':
     with pl(processes=50) as p:
         p.map(find_new_pins,state_to_pin_map.keys())
+    fm.reset()

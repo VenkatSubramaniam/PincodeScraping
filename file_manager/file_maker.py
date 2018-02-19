@@ -1,5 +1,5 @@
 from file_manager.file_reader import get_state_to_pin_map
-from multiprocessing import Lock
+from os import listdir
 
 def make_state_pin_map():
     """Uses the given filename to recreate the state_pin_map.csv, in case there needs to be a more comprehensive list.
@@ -70,7 +70,15 @@ def record_new_pins(pin_code, district):
     with open("my_new_codes.csv", "a") as f:
         f.write(pin_code+","+district+"\n")
 
+
 def record_finish(prefix):
     error = "errors/error_record_"
     with open(error + prefix + ".csv", "w") as f:
         f.write("1000")
+
+
+def reset():
+    for filename in listdir("."):
+        if filename.endswith(".csv"):
+            with open(filename, "w") as f:
+                f.write("0")

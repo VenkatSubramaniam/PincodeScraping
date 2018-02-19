@@ -65,7 +65,12 @@ def record_error(prefix, suffix):
 
 
 def record_new_pins(pin_code, district):
-    with open("/file_manager/data/my_pin_codes.csv", "a") as f:
+    with open("/file_manager/data/my_new_codes.csv", "a") as f:
         f.write(pin_code+","+district+"\n")
     with open("my_new_codes.csv", "a") as f:
         f.write(pin_code+","+district+"\n")
+
+def record_finish(prefix):
+    error = "errors/error_record_"
+    with open(error + prefix + ".csv", "w") as f:
+        f.write("1000")

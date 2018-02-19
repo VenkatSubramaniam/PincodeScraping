@@ -21,12 +21,14 @@ def find_new_pins(prefix):
     my_min_max = max_min_map[prefix]
     pin_list = fr.get_pin_list(prefix, state_to_pin_map)
     suffix = "000"
-    print(type(int(my_min_max[1])))
     try:
         try:
-            last_checked = int(open("errors/error_record_"+prefix).readline())
+            last_checked = int(open("errors/error_record_"+prefix+".csv").readline())
         except FileNotFoundError:
             last_checked = int(my_min_max[0])
+        print("last checked = ", last_checked)
+        if last_checked == 1000:
+            return
         for i in range(last_checked, int(my_min_max[1])+50):
             suffix = str(i)
             if len(suffix)>3:
@@ -50,6 +52,8 @@ def find_new_pins(prefix):
                     # Making the (not so bold) assumption here that not many new pin codes (if at all)
                     # are going to be found, and therefore we will be easily able to fill in the state in the csv.
                     print("found one! It is:", pin_code)
+
+        fm.record_finish(prefix)
     except:
         exit_handler(prefix, suffix)
 
